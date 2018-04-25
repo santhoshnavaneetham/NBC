@@ -282,6 +282,8 @@ public class WebDriverFactory {
 				chromeCapabilities.setCapability(ChromeOptions.CAPABILITY, opt);
 				chromeCapabilities.setCapability("platform", "Windows 10");
 				chromeCapabilities.setCapability("version", "latest");
+				String methodName = new Exception().getStackTrace()[1].getMethodName();
+				chromeCapabilities.setCapability("name", methodName );
 				final String URL = "https://vasanthmanickam:94833836-2842-4a5c-af4f-3b920adf97b0@ondemand.saucelabs.com:443/wd/hub";
 				driver = new RemoteWebDriver(new URL(URL), chromeCapabilities);
 
